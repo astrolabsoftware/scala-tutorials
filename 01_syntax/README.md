@@ -1,11 +1,11 @@
 # Scala syntax
 
-A rapid overview of the Scala syntax to survive in a hostile environment: 
+A rapid overview of the Scala syntax to survive in a hostile environment:
 
-- What you will see: (im)mutable, type declaration, class, object, heritage, and documentation. 
+- What you will see: (im)mutable, type declaration, class, object, heritage, and documentation.
 - What you won't see by lack of time (non-exhaustive!): trait, public/private, generics, ...
 
-Before starting, make sure you read the [introduction](https://gitlab.in2p3.fr/MaitresNageurs/QuatreNages/Scala/blob/master/README.md), especially how to set up the docker image if you do not have Scala installed on your machine.
+Before starting, make sure you read the [introduction](https://github.com/astrolabsoftware/scala-tutorials/blob/master/README.md), especially how to set up the docker image if you do not have Scala installed on your machine.
 
 ## Mutable & immutable variables
 
@@ -38,7 +38,7 @@ def toto(a: Int): Int = {
   a + 1
 }
 
-// Not specifying the return type (Int inferred), 
+// Not specifying the return type (Int inferred),
 // and omitting the curly braces.
 def toto(a: Int) = a + 1
 ```
@@ -57,7 +57,7 @@ Here is a simple class with one attribute, and one method.
 class myClass {
   // A class attribute
   val attribute: Double = 1.0
-	
+
   /**
     * Some doc for the method
     * @param arg input message
@@ -108,10 +108,10 @@ By convention, one places static variables and methods in a singleton object wit
 class Person(val name: String, val age: Int) {
   // Import attributes and methods from the companion object
   import Person._
-  
+
   /** Empty constructor */
   def this() = this("", 0)
-  
+
   /**
     * Compare the age of two Person instances.
     * @param p Instance of Person
@@ -122,7 +122,7 @@ class Person(val name: String, val age: Int) {
       true
     } else false
   }
-  
+
   /** Present yourself */
   def greet: Unit = sayHi(this.name)
 }
@@ -131,7 +131,7 @@ class Person(val name: String, val age: Int) {
   * Companion object to the class `Person`.
   */
 object Person {
-  
+
   /** Present yourself */
   def sayHi(name: String): Unit = println(s"Hi! My name is $name")
 }
@@ -164,7 +164,7 @@ object HelloWorld {
 
 ## Object-oriented extensions
 
-Scala is a pure object-oriented language in the sense that every value is an object. Data types and behaviors of objects are described by classes and traits. Class abstractions are extended by subclassing. Example: 
+Scala is a pure object-oriented language in the sense that every value is an object. Data types and behaviors of objects are described by classes and traits. Class abstractions are extended by subclassing. Example:
 
 ```scala
 /**

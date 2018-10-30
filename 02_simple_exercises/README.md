@@ -4,7 +4,7 @@
 
 ### Setting up the environment
 
-Make sure you read the [introduction](https://gitlab.in2p3.fr/MaitresNageurs/QuatreNages/Scala/blob/master/README.md), especially how to set up the docker image if you do not have Scala installed on your machine, and launch a Scala shell.
+Make sure you read the [introduction](https://github.com/astrolabsoftware/scala-tutorials/blob/master/README.md), especially how to set up the docker image if you do not have Scala installed on your machine, and launch a Scala shell.
 
 ### Pasting codes in the Scala shell
 
@@ -40,7 +40,7 @@ xs.filter(cond).sum
 xs.take(n).toString
 ```
 
-In the case of a strict language, `map` is evaluated once and we produce intermediate list `xs`. In the case of a lazy language, `map` is evaluated twice and there is no intermediate list. 
+In the case of a strict language, `map` is evaluated once and we produce intermediate list `xs`. In the case of a lazy language, `map` is evaluated twice and there is no intermediate list.
 
 In other words strict evaluates expressions as soon as they are available, rather than as needed. Lazy waits for the whole chain of actions before taking a decision on when the evaluation should happen.
 
@@ -48,7 +48,7 @@ Scala collections are **strict** by default. You can declare a variable lazy wit
 
 ### Transformation vs action
 
-Let's take the example above. It is worth noting that in both cases (strict or lazy), the computation (from the point of view of I/O, or CPU computation) is triggered only in the case of an _action_ call such as `sum` or `take`. 
+Let's take the example above. It is worth noting that in both cases (strict or lazy), the computation (from the point of view of I/O, or CPU computation) is triggered only in the case of an _action_ call such as `sum` or `take`.
 
 `map`, or `filter` are called _transformations_, that is they transform change the representation of the data but without materialising it. For example, this allows the compiler to optimise the chain of transformations before executing the action (re-organising the order of transformations before executing for example).
 
